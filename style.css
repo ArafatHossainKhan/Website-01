@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+a{
+    text-decoration: none;
+}
+#wrapper{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 15% auto;
+    grid-template-rows: auto 80%;
+    grid-template-areas: 
+    'sidebar main-content'
+    'sidebar main-content'
+    'sidebar footer'
+    ;
+
+}
+.sidebar{
+    
+    background-color: #1e1e1f;
+    grid-area: sidebar;
+
+}
+nav{
+    text-align: center;
+}
+.brand{
+    background-color: white;
+    padding: 2.5rem 0; 
+}
+.brand > .nav-link{
+    font-size: 2rem;
+    color: #1e1e1f;
+}
+.nav-list{
+    list-style: none;
+}
+.nav-item{
+    margin: 5rem 0;
+    height: 50px;
+
+}
+.nav-link{
+    font-size: 1.6rem;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem;
+    position: relative;
+    
+}
+ul li:hover{
+    border-bottom: 2px solid  #fabc3c;
+    
+}
+.main-content{
+    
+    background: linear-gradient(326deg, #000000 0%, rgba(93, 90, 92, 0.8) 74%),
+    url(pexels-dibakar-roy-4064963.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+    grid-area: main-content;
+
+}
+.content{
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    transform: translateY(-55%);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.content h1{
+    font-size: 5rem;
+}
+.content h6{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.btn-group{
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+.btn{
+    color: #fff;
+    padding: 1rem 5rem;
+    border: 2px solid rgba(255, 255, 255, .6);
+}
+.btn:first-child{
+    margin-right: 1rem;
+}
+.content .date {
+    color: #facc6b;
+    font-size: 2rem;
+}
+
+
+
+.footer{
+    display: flex;
+    background-image: linear-gradient(315deg, #fabc3c 0%, #facc6b 75%);
+    grid-area: footer;
+    height: 100%;
+    align-items: center;
+}
+
+.panc-notice{
+    display: flex;
+    height: inherit;
+    width: 100%;
+    max-width: 40rem;
+    background-color: #fff;
+}
+.panc-notice h1 {
+    margin: auto;
+    text-transform: uppercase;
+    position: relative;
+}
+.panc-notice h1::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+    width: 5.5rem;
+    height: 3px;
+    background-image: linear-gradient(315deg, #fabc3c 0%, #facc6b 75%);
+
+}
+.statistics{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+}
+.statistics .item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+.statistics .item i{
+    font-size: 8rem;
+    padding: 0 3rem;
+}
+.item-desc p{
+    font-size: 1.4rem;
+}
+
+@media (max-width : 1300px){
+    .brand > .nav-link{
+        font-size: 1.2rem;
+    }
+    .statistics .item i {
+        font-size: 5rem;
+        padding: 0 1rem;
+    }
+    .panc-notice{
+        max-width: 25rem;
+        padding: 1rem;
+    }
+    .panc-notice h1 {
+        font-size: 1.5rem;
+    }
+    .item-desc p {
+        font-size: 1.2rem ;
+    }
+}
+
+@media (max-width: 960px){
+    #wrapper{
+        grid-template-columns: 100% auto;
+        grid-template-rows: 10% 100% auto;
+        grid-template-areas: 
+        "sidebar"
+        "main-content"
+        "footer"
+        
+        ;
+    }
+    nav{
+        height: 100px;
+        position: relative;
+    }
+    .nav-list{
+        height: 100%;
+        display: flex;
+    }
+    .brand{
+
+        display: none;
+    }
+    .nav-item{
+        margin: auto;
+    }
+}
+@media (max-width: 785px){
+    .content{
+        top: 50%;
+        left: 50%;
+        right: initial;
+        transform: translate(-50%, -50%);
+    }
+    .panc-notice{
+        max-width: initial;
+    }
+    .panc-notice h1::before{
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -.7rem;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+@media (max-width: 680px){
+    .nav-link{
+        font-size: .8rem;
+    }
+    .btn{
+        padding: .5rem 3rem;
+    }
+    .statistics{
+        flex-direction: column;
+    }
+    .statistics .item{
+        flex-direction: column;
+    }
+    .item-desc{
+        text-align: center;
+        color: #fff;
+    }
+    .item-desc h1{
+        margin: 1rem 0;
+    }
+    .brand{
+        left: 40%;
+    }
+}
